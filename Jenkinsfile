@@ -5,5 +5,9 @@ pipeline {
       label 'master'
     }  
   }
+  
+  stage('Init') {
+     sh 'docker version' 
+  }  
 
 }
