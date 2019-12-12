@@ -18,6 +18,14 @@ pipeline {
 
   stages {
     
+    stage('Build app') {
+      steps {
+         script {
+            sh 'mvn clean install'
+         }
+      }
+    }
+    
     stage('Build image') {
       steps {
          script {
