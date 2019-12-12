@@ -18,13 +18,13 @@ pipeline {
 
   stages {
     
-    stage('Set Terraform path') {
+    stage('Set Docker path') {
       steps {
          script {
-            def tfHome = tool name: 'Terraform'
+            def tfHome = tool name: 'Docker'
             env.PATH = "${tfHome}:${env.PATH}"
          }
-         sh 'terraform version'
+         sh 'docker version'
       }
     }
 
