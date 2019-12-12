@@ -1,1 +1,1 @@
-# hackathon-manage-const
+# hackathon-mc
