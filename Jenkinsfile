@@ -18,16 +18,6 @@ pipeline {
 
   stages {
     
-    stage('Set Docker path') {
-      steps {
-         script {
-            def tfHome = tool name: 'Docker'
-            env.PATH = "${tfHome}:${env.PATH}"
-         }
-         sh 'docker version'
-      }
-    }
-
     stage('Build image') {
       steps {
          script {
