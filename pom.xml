@@ -11,7 +11,7 @@
 	<groupId>org.stjude.cloud.hackathon</groupId>
 	<artifactId>hackathon-mc</artifactId>
 	<version>1.0</version>
-	<name>cloud-demo</name>
+	<name>hackathon-mc</name>
 	<description>Spring Boot demo Application</description>
 
 	<properties>
