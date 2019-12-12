@@ -37,7 +37,7 @@ pipeline {
     stage('Push image') {
       steps {
          script {
-           docker.withRegistry('https://058669483418.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:params.credential') {
+           docker.withRegistry('https://058669483418.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
              sh 'docker push 058669483418.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest'
            }
          }
