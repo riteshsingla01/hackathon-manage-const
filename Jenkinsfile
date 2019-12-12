@@ -29,7 +29,7 @@ pipeline {
     stage('Build image') {
       steps {
          script {
-            sh 'docker build -t 058669483418.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest .'
+            sh 'docker build -t 685420145038.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest .'
          }
       }
     }
@@ -37,8 +37,8 @@ pipeline {
     stage('Push image') {
       steps {
          script {
-           docker.withRegistry('https://058669483418.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
-             sh 'docker push 058669483418.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest'
+           docker.withRegistry('https://685420145038.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
+             sh 'docker push 685420145038.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest'
            }
          }
       }
