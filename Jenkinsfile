@@ -6,8 +6,14 @@ pipeline {
     }  
   }
   
-  stage('Init') {
-     sh 'docker version' 
-  }  
+  stages {
+    
+    stage('Set Terraform path') {
+      steps {
+         sh 'terraform version'
+      }
+    }
+    
+  }
 
 }
