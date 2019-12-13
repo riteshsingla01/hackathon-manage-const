@@ -46,11 +46,11 @@ pipeline {
     
     stage('Deploy') {
       steps {
-        kubernetesDeploy {
-          kubeconfigId: 'kubeconfig',
-          configs: 'mc-deployment.yaml',
-          enableConfigSubstitution: true
-        }
+        kubernetesDeploy(
+            kubeconfigId: 'kubeconfig',
+            configs: 'mc-deployment.yaml',
+            enableConfigSubstitution: true
+        )
       }
     }
   }
