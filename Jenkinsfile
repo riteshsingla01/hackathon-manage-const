@@ -43,16 +43,6 @@ pipeline {
          }
       }
     }
-    
-    stage('Deploy') {
-      steps {
-        kubernetesDeploy(
-            kubeconfigId: 'kubeconfig',
-            configs: 'mc-deployment.yml',
-            enableConfigSubstitution: true
-        )
-      }
-    }
   }
 
 }
