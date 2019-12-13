@@ -46,8 +46,10 @@ pipeline {
     
     stage('Deploy') {
       steps {
-        script {
-          sh 'kubectl apply -f /home/cloud_user/hackathon/mc-deployment.yaml'
+        kubernetesDeploy {
+          kubeconfigId: 'kubeconfig',
+          configs: 'mc-deployment.yaml',
+          enableConfigSubstitution: true
         }
       }
     }
