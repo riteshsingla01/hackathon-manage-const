@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hack-mc
+spec:
+  selector:
+    matchLabels:
+      app: hack-mc
+  replicas: 3
+  template:
+    metadata:
+      name: hack-mc
+      labels:
+        app: hack-mc
+    spec:
+      containers:
+      - image: 685420145038.dkr.ecr.us-east-1.amazonaws.com/hackathon:latest
+        name: hack-mc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hack-mc
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: hack-mc
